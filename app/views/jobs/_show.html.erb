@@ -1,4 +1,4 @@
-<%= bootstrap_form_with(model: job) do |form| %>
+<%= bootstrap_form_with(model: job, url: job_application_path, method: :post) do |form| %>
   <div class="form-group">
     <%= form.text_field :title,  placeholder: 'Job Title', class: 'form-control', readonly: true  %>
   </div>
@@ -8,6 +8,11 @@
   <% if current_employer %>
     <div class="form-group">
       <%= form.text_area :applicant_names , placeholder: 'No Applicants Yet', class: 'form-control', readonly: true %>
+    </div>
+  <% else %>
+    <%= form.hidden_field :job_id, value: job.id %>
+    <div class="form-group">
+      <%= form.submit "Apply", class: "btn btn-primary btn-block btn-lg" , disabled: current_applicant.already_applied?(job)  %>
     </div>
   <% end %>
 <% end %>

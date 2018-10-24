@@ -1,4 +1,7 @@
 <%= bootstrap_form_with(model: job, local: true) do |form| %>
+  <% if job.errors.any? %>
+    <%= render 'shared/alert', locals: {message: "Couldn't create job" }  %>
+  <% end %>
   <div class="form-group">
     <%= form.text_field :title,  placeholder: 'Job Title', class: 'form-control' %>
   </div>
