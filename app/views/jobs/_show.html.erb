@@ -1,4 +1,4 @@
-<%= bootstrap_form_with(model: job, url: job_application_path, method: :post) do |form| %>
+<%= bootstrap_form_with(model: job, url: job_applications_path, method: :post) do |form| %>
   <div class="form-group">
     <%= form.text_field :title,  placeholder: 'Job Title', class: 'form-control', readonly: true  %>
   </div>
