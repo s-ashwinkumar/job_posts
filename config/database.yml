@@ -49,6 +49,4 @@ test:
 #
 production:
   <<: *default
-  database: job_posts_production
-  username: job_posts
   password: <%= ENV['JOB_POSTS_DATABASE_PASSWORD'] %>
