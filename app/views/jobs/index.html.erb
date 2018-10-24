@@ -1,4 +1,3 @@
-
 <div class="container">
   <br>
   <%= render 'shared/messages' %>
@@ -18,6 +17,8 @@
         <% if employer_signed_in? %>
           <th > Edit </th>
           <th > Destroy </th>
+        <% else %>
+          <th > Status </th>
         <% end %>
       </tr>
       </thead>
@@ -31,6 +32,8 @@
           <% if employer_signed_in? %>
             <td colspan="1"><%= link_to 'Edit', edit_job_path(job) %></td>
             <td colspan="1"><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% else %>
+            <td colspan="1"><%= get_badge(job) %></td>
           <% end %>
         </tr>
       <% end %>
