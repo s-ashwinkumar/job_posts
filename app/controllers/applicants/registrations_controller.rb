@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Applicants::RegistrationsController < Devise::RegistrationsController
+  include Accessible
   ADDED_ATTRS = [:first_name, :last_name]
 
   before_action :configure_sign_up_params, only: [:create]

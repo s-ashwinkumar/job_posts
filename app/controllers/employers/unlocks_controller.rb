@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class Employers::UnlocksController < Devise::UnlocksController
-  # GET /resource/unlock/new
+  include Accessible
+# GET /resource/unlock/new
   # def new
   #   super
   # end

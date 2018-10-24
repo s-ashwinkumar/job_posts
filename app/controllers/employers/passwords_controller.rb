@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class Employers::PasswordsController < Devise::PasswordsController
-  # GET /resource/password/new
+  include Accessible
+# GET /resource/password/new
   # def new
   #   super
   # end
