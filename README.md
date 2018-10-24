@@ -23,3 +23,12 @@ Considering the fact that there were no UI mocks given, I have created what I th
 - Have separate Employers and Applicants tables - It might not be a bad idea to use something like STI,
 but the two user groups have completely different functionalities. So it is probably better idea to keep them separate.
 - Authorization - Since the number of functionalities were less, considering the time to be spent, just cooked up authorization using Devise methods and did not use something like CanCan or Pundit.
+
+## Deployment:
+* Host : <http://ec2-52-53-213-3.us-west-1.compute.amazonaws.com:3000>
+* Sample users : 
+    - Employer - jimmy@zep.com / password1
+    - Employer - rob@zep.com / password1
+    - Applicant - john@zep.com / password1
+    - Applicant - steve@zep.com / password1
+    - Applicant - dave@zep.com / password1
