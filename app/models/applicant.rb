@@ -3,4 +3,7 @@ class Applicant < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_and_belongs_to_many :jobs, join_table: 'job_applications', dependent: :destroy
+
 end
