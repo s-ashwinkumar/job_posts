@@ -1,17 +1,15 @@
-<%= form_with(model: job, local: true) do |form| %>
+<%= bootstrap_form_with(model: job, local: true) do |form| %>
   <% if job.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
-
-      <ul>
-      <% job.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+    <%= render 'shared/alert', locals: {message: "Couldn't create job" }  %>
   <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.text_field :title,  placeholder: 'Job Title', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= form.text_area :description ,  placeholder: 'Job Description', class: 'form-control' %>
+  </div>
+  <%= form.hidden_field :employer_id, value: job.employer_id %>
+  <div class="form-group">
+    <%= form.submit "Submit Job", class: "btn btn-primary btn-block btn-lg"  %>
   </div>
 <% end %>
