@@ -10,9 +10,16 @@
       <%= form.text_area :applicant_names , placeholder: 'No Applicants Yet', class: 'form-control', readonly: true %>
     </div>
   <% else %>
+
     <%= form.hidden_field :job_id, value: job.id %>
+
     <div class="form-group">
-      <%= form.submit "Apply", class: "btn btn-primary btn-block btn-lg" , disabled: current_applicant.already_applied?(job)  %>
+      <%= form.text_field :employer_name , class: 'form-control', readonly: true %>
     </div>
+    <% unless current_applicant.already_applied?(job) %>
+      <div class="form-group">
+        <%= form.submit "Apply", class: "btn btn-primary btn-block btn-lg" %>
+      </div>
+    <% end %>
   <% end %>
 <% end %>

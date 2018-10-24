@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class Employers::ConfirmationsController < Devise::ConfirmationsController
-  # GET /resource/confirmation/new
+  include Accessible
+# GET /resource/confirmation/new
   # def new
   #   super
   # end
