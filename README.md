@@ -13,8 +13,13 @@ An employer should be able to:
 * Create job openings.
 * See all the applicants who applied to their job openings by name.
 
-## Design Decisions
+## Few points regarding solution
+Considering the fact that there were no UI mocks given, I have created what I thought would be a quick yet usable UI
+- There is one single landing page (/) which gives options of signing up or signing in as Applicants or employer
+- Home page for both type of users is a list of jobs. But what is shown in the list and the actions allowed depend on the type of user.
+- Show link on the job lists provides an apply button for user.
+
+## Design decisions
 - Have separate Employers and Applicants tables - It might not be a bad idea to use something like STI,
 but the two user groups have completely different functionalities. So it is probably better idea to keep them separate.
 - Authorization - Since the number of functionalities were less, considering the time to be spent, just cooked up authorization using Devise methods and did not use something like CanCan or Pundit.
-- 

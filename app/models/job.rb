@@ -13,4 +13,8 @@ class Job < ApplicationRecord
   def applicant_names
     applicants.map(&:full_name).uniq.join(' , ')
   end
+
+  def employer_name
+    employer.full_name
+  end
 end
