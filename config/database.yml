@@ -49,4 +49,4 @@ test:
 #
 production:
   <<: *default
-  password: <%= ENV['JOB_POSTS_DATABASE_PASSWORD'] %>
+  database: job_posts_production
