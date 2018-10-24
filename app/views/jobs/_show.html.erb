@@ -5,4 +5,9 @@
   <div class="form-group">
     <%= form.text_area :description ,  placeholder: 'Job Description', class: 'form-control', readonly: true %>
   </div>
+  <% if current_employer %>
+    <div class="form-group">
+      <%= form.text_area :applicant_names , placeholder: 'No Applicants Yet', class: 'form-control', readonly: true %>
+    </div>
+  <% end %>
 <% end %>

@@ -9,4 +9,8 @@ class Job < ApplicationRecord
     return all unless employer
     employer.jobs
   end
+
+  def applicant_names
+    applicants.map(&:full_name).uniq.join(' , ')
+  end
 end
