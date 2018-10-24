@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:create]
+  before_action :authenticate_employer, only: [:create, :edit, :update, :destroy]
   # GET /jobs
   # GET /jobs.json
   def index
